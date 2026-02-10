@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14 февраля 💖</title>
+
+<!-- Шрифт -->
+<link href="https://fonts.googleapis.com/css2?family=DancingScript&display=swap&subset=cyrillic" rel="stylesheet">
+
+<style>
+/* -------- Общие стили -------- */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Dancing Script', cursive;
+}
+
+body{
+    height:100vh;
+    background: linear-gradient(
+        120deg,
+        #ff9a9e,
+        #fad0c4,
+        #fbc2eb,
+        #a18cd1,
+        #ffdde1
+    );
+    background-size: 500% 500%;
+    animation: gradientMove 20s ease infinite;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+@keyframes gradientMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.screen{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    opacity:0;
+    pointer-events:none;
+    transition:1s;
+    padding:20px;
+    text-align:center;
+}
+
+.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* -------- Текст -------- */
+h1{
+    color:white;
+    font-size:38px;
+    margin-bottom:25px;
+    text-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+/* -------- Кнопки -------- */
+.buttons{
+    position:relative;
+    width:100%;
+    max-width:260px;
+    height:140px;
+}
+
+button{
+    width:100%;
+    padding:18px;
+    font-size:22px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    margin:10px 0;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.25);
+}
+
+#yes{
+    background:linear-gradient(135deg,#ff4d6d,#ff758f);
+    color:white;
+}
+
+#no{
+    background:white;
+    color:#ff4d6d;
+    position:absolute;
+    left:0;
+    top:70px;
+}
+
+/* -------- Смайлы -------- */
+.emoji{
+    position:absolute;
+    font-size:28px;
+    animation: float 5s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes float{
+    0%{transform:translateY(0); opacity:0;}
+    30%{opacity:1;}
+    100%{transform:translateY(-700px); opacity:0;}
+}
+
+/* -------- Финальный экран -------- */
+.final img{
+    width:80%;
+    max-width:260px;
+    border-radius:20px;
+    margin:10px 0;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.text{
+    color: white;
+    font-size:20px;
+    margin-top:15px;
+    line-height:1.5;
+}
+
+.photos{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin-top:15px;
+}
+
+.photo{
+    width:260px;
+    height:420px;
+    border-radius:20px;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;   /* 🔥 ключевая строка */
+}
+
+.photo:nth-child(1){
+    transform: rotate(-3deg);
+}
+
+.photo:nth-child(2){
+    transform: rotate(3deg);
+}
+
+.final-card{
+    background: rgba(255,255,255,0.35);  /* стеклянный эффект */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 28px;
+    padding: 28px 22px;
+    max-width: 580px;
+    width: 90%;
+    box-shadow: 0 0 40px rgba(255,255,255,0.25),
+                0 15px 35px rgba(0,0,0,0.35);
+    text-align: center;
+    animation: cardFade 1.2s ease forwards;
+}
+
+.final-card h1{
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.final-card .text{
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1.6;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+@keyframes cardFade{
+    from{opacity:0; transform:scale(0.95) translateY(20px);}
+    to{opacity:1; transform:scale(1) translateY(0);}
+}
+
+/* -------- Адаптив -------- */
+@media (max-width: 600px){
+
+    body{
+        padding: 10px;
+    }
+
+    h1{
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+
+    .screen{
+        padding: 12px;
+    }
+
+    /* кнопки */
+    .buttons{
+        max-width: 220px;
+        height: 120px;
+    }
+
+    button{
+        font-size: 18px;
+        padding: 14px;
+        border-radius: 30px;
+    }
+
+    #no{
+        top: 60px;
+    }
+
+    /* финальная карточка */
+    .final-card{
+        padding: 18px 14px;
+        border-radius: 22px;
+        max-width: 95%;
+    }
+
+    .final-card h1{
+        font-size: 26px;
+    }
+
+    /* фото */
+    .photos{
+        flex-direction: column;   /* вертикально */
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    .photo{
+        width: 100%;
+        height: 260px;
+    }
+
+    .photo img{
+        border-radius: 16px;
+    }
+
+    /* убираем сильный наклон на телефоне */
+    .photo:nth-child(1){
+        transform: rotate(-1.5deg);
+    }
+
+    .photo:nth-child(2){
+        transform: rotate(1.5deg);
+    }
+
+    /* текст */
+    .final-card .text{
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 12px;
+    }
+
+    /* emoji */
+    .emoji{
+        font-size: 22px;
+    }
+
+}
+</style>
+</head>
+<body>
+
+    <!-- Canvas для фона -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- ---------- Screen 1 ---------- -->
+<div class="screen active" id="screen1">
+    <h1>Ты меня любишь? 💖</h1>
+    <div class="buttons">
+        <button id="yes">Да 💗</button>
+        <button id="no">Нет 💔</button>
+    </div>
+</div>
+
+<!-- ---------- Screen 2 (грусть) ---------- -->
+<div class="screen" id="screen2">
+    <h1>💔</h1>
+</div>
+
+<!-- ---------- Screen 3 (смех) ---------- -->
+<div class="screen" id="screen3">
+    <h1>😂😂😂</h1>
+    <h1 style="margin-top:15px;font-size:26px;">
+        Ты думала, я позволю тебе нажать "нет"? 😏
+    </h1>
+</div>
+
+<!-- ---------- Screen 4 (финал) ---------- -->
+<div class="screen final" id="screen4">
+    <div class="final-card">
+        <h1>💞 С 14 февраля 💞</h1>
+
+        <div class="photos">
+            <div class="photo"><img src="photo1.jpg"></div>
+            <div class="photo"><img src="photo2.jpg"></div>
+        </div>
+
+        <div class="text">
+            Ты — самый важный человек в моей жизни ❤️<br>
+            Я люблю тебя больше, чем слова могут передать.<br>
+            Спасибо, что ты есть 💕
+        </div>
+    </div>
+</div>
+
+
+<!-- ---------- Скрипт ---------- -->
+<script>
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// ================== Объекты ==================
+let hearts = [];
+
+// ================== Инициализация ==================
+for(let i=0;i<50;i++){
+    hearts.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        size: 20 + Math.random()*20,
+        speed: 1 + Math.random()*2,
+        alpha: 0.3 + Math.random()*0.4,
+        visible: true
+    });
+}
+
+// ================== Анимация ==================
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    // сердца
+    hearts.forEach(h=>{
+        if(h.visible){
+            ctx.globalAlpha = h.alpha;
+            ctx.font = h.size + "px Arial";
+            ctx.fillText('❤️', h.x, h.y);
+            h.y += h.speed;
+            if(h.y > canvas.height){
+                h.y = -50;
+                h.x = Math.random()*canvas.width;
+            }
+        }
+    });
+
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// ================== Управление видимостью ==================
+function showHearts(){
+    hearts.forEach(h=>h.visible=true);
+}
+
+function hideHearts(){
+    hearts.forEach(h=>h.visible=false);
+}
+
+// ================== Логика экранов ==================
+let noBtn = document.getElementById('no');
+let yesBtn = document.getElementById('yes');
+let screen1 = document.getElementById('screen1');
+let screen2 = document.getElementById('screen2');
+let screen3 = document.getElementById('screen3');
+let screen4 = document.getElementById('screen4');
+
+let noCount = 0;
+
+// убегание кнопки
+function moveNo(){
+    let x = Math.random()*260 - 130;
+    let y = Math.random()*180 - 90;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+// ================== Кнопка НЕТ ==================
+noBtn.addEventListener('click', e=>{
+    e.preventDefault();
+    noCount++;
+
+    if(noCount <= 2){
+        moveNo();
+    } else {
+        hideHearts(); // скрываем сердечки
+        screen1.classList.remove('active');
+        screen2.classList.add('active');
+
+        spawnDomEmoji("😢",25);
+
+        setTimeout(()=>{
+            screen2.classList.remove('active');
+            screen3.classList.add('active');
+
+            spawnDomEmoji("😂",25);
+
+            setTimeout(()=>{
+                screen3.classList.remove('active');
+                screen4.classList.add('active');
+
+                showHearts(); // возвращаем сердечки
+            },3500);
+
+        },3500);
+    }
+});
+
+// ================== Кнопка ДА ==================
+yesBtn.addEventListener('click', ()=>{
+    screen1.classList.remove('active');
+    screen4.classList.add('active');
+    showHearts();
+});
+
+// ================== DOM emoji (всплывающие) ==================
+function spawnDomEmoji(symbol,count){
+    for(let i=0;i<count;i++){
+        let e = document.createElement('div');
+        e.className = 'emoji';
+        e.innerText = symbol;
+
+        e.style.left = Math.random()*100 + '%';
+        e.style.bottom = '-50px';
+        e.style.animationDuration = 3 + Math.random()*3 + 's';
+
+        // fade-in / fade-out
+        e.style.opacity = '0';
+        e.style.transition = 'opacity 1s ease';
+
+        document.body.appendChild(e);
+
+        // fade in
+        requestAnimationFrame(()=>{
+            e.style.opacity = '1';
+        });
+
+        // fade out перед удалением
+        setTimeout(()=>{
+            e.style.opacity = '0';
+        }, 4500);
+
+        // удаление
+        setTimeout(()=>{
+            e.remove();
+        }, 6000);
+    }
+}
+
+
+// ================== Resize ==================
+window.addEventListener('resize',()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
